@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+
+
+<body>
+<center><h1><font color="white">Cardiac Disease Prediction</h1></center>
+<h2>     </h2>
+
+<div align="center" style="margin-right: 30%;
+    margin-left: 30%;">
+
+  <form method="POST">
+  <form action="/action_page.php">
+    <label for="Age"></label>
+    <input type="number" id="Age" name="Age" placeholder="Age (between 29 and 77)" min="38" max="1027" step="0.1" required size="35">
+
+    <label for="Sex"></label>
+    <input type="number" id="Sex" name="Sex" placeholder="Sex (male=1, female=0)" min="2" max="103" step="0.1" required size="35">
+
+    <label for="Chest_Pain"></label>
+    <input type="number" id="Chest_Pain" name="Chest_Pain" placeholder="Chest Pain (0 - 3)" min="18" max="74" required>
+
+    <label for="Resting_Blood_Pressure"></label>
+    <input type="number" id="Resting_Blood_Pressure" name="Resting_Blood_Pressure" placeholder="Resting Blood Pressure in mm Hg (between 94 to 200)" min="-0.3" max="16.5" step="0.1" required>
+
+    <label for="Serum_Cholestoral"></label>
+    <input type="number" id="Serum_Cholestoral" name="Serum_Cholestoral" placeholder="Serum Cholestoral in mg/dl (between 126 to 564)" min="-0.3" max="16.5" step="0.1" required>
+
+    <label for="Fasting_Blood_Sugar"></label>
+    <input type="number" id="Fasting_Blood_Sugar" name="Fasting_Blood_Sugar" placeholder="Fasting Blood Sugar > 120 mg/dl (true = 1, false = 0)" min="-0.3" max="16.5" step="0.1" required>
+
+    <label for="Resting_ECG_Results"></label>
+    <input type="number" id="Resting_ECG_Results" name="Resting_ECG_Results" placeholder="Resting ECG Results (between 0 to 2)" min="-0.3" max="16.5" step="0.1" required>
+
+    <label for="Maximum_HeartRate"></label>
+    <input type="number" id="Maximum_HeartRate" name="Maximum_HeartRate" placeholder="Maximum HeartRate Achieved (between 71 to 202)" min="-0.3" max="16.5" step="0.1" required>
+
+    <label for="Exercise_Induced_Angina"></label>
+    <input type="number" id="Exercise_Induced_Angina" name="Exercise_Induced_Angina" placeholder="Exercise Induced Angina (yes = 1, no = 0)" min="-0.3" max="16.5" step="0.1" required>
+
+    <label for="STDepression_Induced"></label>
+    <input type="number" id="STDepression_Induced" name="STDepression_Induced" placeholder="ST Depression Induced (from 0 to 6.2)" min="-0.3" max="16.5" step="0.1" required>
+
+    <select name="req_model">
+    <option value="Logistic">Logistic Regression</option>
+    <option value="RandomForest">Random Forest</option>
+    <option value="SVM">SVM</option>
+  </select>
+
+
+    <input type="submit" value="Predict">
+  </form>
+</form>
+
+<form method="GET">
+    <center><h2><font color="Black"> Patient category: {{ target}}</h2></center>
+    <center><h2><font color="Black"> {{ sickness_making}}</h2></center>
+</form>
+
+
+</div>
+
+
+</body>
+</html>
